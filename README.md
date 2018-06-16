@@ -307,9 +307,9 @@ Depth-first search is a classic recursive method for systematically examining ea
 * Visit (recursively) all the vertices that are adjacent to it and that have not yet been marked.
 
 
-| Trace                                            | Paths                                            |
-| ------------------------------------------------ | ------------------------------------------------ |
-| ![depth first search](http://prntscr.com/jvpl3h) | ![depth first search](http://prntscr.com/jvpupl) |
+| Trace                                                        | Paths                                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![depth first search](https://image.prntscr.com/image/LMQhJFT7QMi3YaWccF0-vA.png) | ![depth first search](https://image.prntscr.com/image/YJR-HrzVQ9KRiSLw4DI3QA.png) |
 
 
 #### Breadth first search
@@ -318,9 +318,9 @@ Depth-first search is a classic recursive method for systematically examining ea
 
 We are often interested in finding **the *shortest* such path** (one with a minimal number of edges). Breadth-first search is a classic method based on this goal. To find a shortest path from `s` to `v`, we start at `s` and check for `v` among all the vertices that we can reach by following one edge, then we check for `v` among all the vertices that we can reach from `s` by following two edges, and so forth. 
 
-| Trace                                              | Paths                                              |
-| -------------------------------------------------- | -------------------------------------------------- |
-| ![breadth first search](http://prntscr.com/jvpllt) | ![breadth first search](http://prntscr.com/jvptsh) |
+| Trace                                                        | Paths                                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![breadth first search](https://image.prntscr.com/image/tx-VokgJR864BngkX9i5JQ.png) | ![breadth first search](https://image.prntscr.com/image/aEkzpTEsRUWCR-Fp0cQ9UQ.png) |
 
 #### Connected Components
 
