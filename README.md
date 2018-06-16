@@ -1,5 +1,9 @@
 # Algorithms & Data Structures Exam Prep
 
+
+
+[TOC]
+
 ## Recursion
 
 Bad Recursion BRB
@@ -50,19 +54,19 @@ Time, Memory, Scalability, Big-O, Union-Find Case
 
 ## Data Structure
 
-##### Bag:
+#### Bag:
 
 A bag is a collection where removing items is not supported—its purpose is to provide clients with the ability to **collect items and then to iterate through the collected items** (the client can also test if a bag is empty and find its number of items). 
 
 add, isEmpty, size
 
-##### Queue:
+#### Queue:
 
 A FIFO queue (or just a queue) is a collection that is based on the first-in-first-out (**FIFO**) policy. The policy of doing tasks in the **same order that they arrive** is one that we encounter frequently in everyday life: from people waiting in line at a theater, to cars waiting in line at a toll booth.
 
 enqueue, dequeue, isEmpty, size
 
-##### Stacks:
+#### Stacks:
 
 A pushdown stack (or just a stack) is a collection that is based on the last-in-first-out (**LIFO**) policy. When you keep your mail in a pile on your desk, you are using a stack. You pile pieces of new mail on the top when they arrive and take each piece of mail from the top when you are ready to read it.  
 
@@ -70,7 +74,7 @@ push, pop, isEmpty, size
 
 
 
-##### Array/Linked Lists:
+#### Array/Linked Lists:
 
 **Definition**. A linked list is a recursive data structure that is either empty (null) or a reference to a node having a generic item and a reference to a linked list.  
 
@@ -92,17 +96,17 @@ private class Node {
 
 ##### Selection sort:
 
-best case: *½n^2*
+**best case**: *½n^2*
 
-worst case: *½n^2* 
+**worst case**: *½n^2* 
 
 One of the simplest sorting algorithms works as follows: First, find the smallest item in the array and exchange it with the first entry (itself if the first entry is already the smallest). Then, find the next smallest item and exchange it with the second entry. Continue in this way until the entire array is sorted. This method is called selection sort because it works by **repeatedly selecting the smallest remaining item**. 
 
 ##### Insertion sort:
 
-best case: *n*
+**best case**: *n*
 
-worst case: *½n^2* 
+**worst case**: *½n^2* 
 
 The algorithm that people often use to sort bridge hands is to consider the cards one at a time, **inserting each into its proper place among those already considered** (keeping them sorted). 
 
@@ -116,11 +120,11 @@ Shellsort is a simple extension of insertion sort that gains speed by allowing e
 
 ## Merge & Quick Sort
 
-#### Merge Sort:
+### Merge Sort:
 
-worst case: *n log n*
+**worst case**: *n log n*
 
-best case: *½ n log n*
+**best case**: *½ n log n*
 
 A simple recursive sort method known as *mergesort*: to sort an array, divide it into two halves, sort the two halves (recursively), and then merge the results. 
 
@@ -138,7 +142,7 @@ Split array into smallest subarrays (length = 2) and sort, then merge, then incr
 
 
 
-#### Quick Sort:
+### Quick Sort:
 
 **Worst case**: *n^2* (/2 ???)
 
@@ -154,7 +158,7 @@ and breaking the list up *n* times
 
 and log n because we divide the list *n* times
 
-**The basic algorithm. **Quicksort is a divide-and-conquer method for sorting. It works by partitioning an array into two parts, then sorting the parts independently.
+**The basic algorithm. ** Quicksort is a divide-and-conquer method for sorting. It works by partitioning an array into two parts, then sorting the parts independently.
 
  Quicksort works by:
 
@@ -170,11 +174,27 @@ and log n because we divide the list *n* times
 > - *Cutoff to insertion sort.* As with mergesort, it pays to switch to insertion sort for tiny arrays. The optimum value of the cutoff is system-dependent, but any value between 5 and 15 is likely to work well in most situations.
 > - *Median-of-three partitioning.* A second easy way to improve the performance of quicksort is to use the median of a small sample of items taken from the array as the partitioning item. Doing so will give a slightly better partition, but at the cost of computing the median. It turns out that most of the available improvement comes from choosing a sample of size 3 (and then partitioning on the middle item).
 
+
+
 ## Sorting and Searching
 
-Priority queues
+### Priority queues
 
-Symbol tables
+Priority queues are characterized by the *remove the maximum* and *insert* operations.
+
+isEmpty, add, removeMax, peekMax
+
+| data structure  | insert | remove max |
+| --------------- | ------ | ---------- |
+| ordered array   | N      | 1          |
+| unordered array | 1      | N          |
+| heap            | log N  | log N      |
+
+**Heapsort**. We can use any priority queue to develop a sorting method. We insert all the keys to be sorted into a minimum-oriented priority queue, then repeatedly use remove the minimum to remove them all in order. When using a heap for the priority queue, we obtain heapsort.
+
+### Symbol tables
+
+
 
 ## Search Trees
 
