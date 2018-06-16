@@ -1,8 +1,5 @@
-# Algorithms & Data Structures Exam Prep
+# Algorithms & Data Structures Exam Preparation 
 
-
-
-[TOC]
 
 ## Recursion
 
@@ -188,39 +185,154 @@ isEmpty, add, removeMax, peekMax
 | --------------- | ------ | ---------- |
 | ordered array   | N      | 1          |
 | unordered array | 1      | N          |
-| heap            | log N  | log N      |
+| binary heap     | log N  | log N      |
+
+**For both insert and remove to be fast, we need to use the binary heap data structure.**
+
+A binary tree is *heap-ordered* if the key in each node is larger than (or equal to) the keys in that nodes two children (if any). 
+
+The largest key in a heap-ordered binary tree is found at the root. 
+
+
 
 **Heapsort**. We can use any priority queue to develop a sorting method. We insert all the keys to be sorted into a minimum-oriented priority queue, then repeatedly use remove the minimum to remove them all in order. When using a heap for the priority queue, we obtain heapsort.
 
 ### Symbol tables
 
+The primary purpose of a *symbol table* is to associate a *value* with a *key*. The client can *insert* key–value pairs into the symbol table with the expectation of later being able to *search* for the value associated with a given key. 
 
+put, get, delete, contains, isEmpty, size
+
+Examples:
+
+| application | purpose                 | key     | value                |
+| ----------- | ----------------------- | ------- | -------------------- |
+| dictionary  | find definition         | word    | definition           |
+| book index  | find relevant pages     | term    | list of page numbers |
+| web search  | find relevant web pages | keyword | list of page names   |
+
+**Linked list (sequential search)** best for tiny symbol tables, slow for large
+
+**Ordered array (binary search)** optimal search and space, order-based ops, slow insert
+
+**Binary search tree** easy to implement, order-based ops, no guarantees space for links
+
+**Hash table** fast search/insert for common types of data, need hash for each type no order-based ops, space for links/empty 
 
 ## Search Trees
 
+A *binary search tree* (BST) is a binary tree where each node has a `Comparable` key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree. 
 
+**Balanced Search Trees** TODO
 
 ## Hash Tables
 
-Symbol table applications
+Hash tables are basically key-value store (or symbol table) with hashed keys.
+
+#### Collision Problems 
+
+Search algorithms that use hashing consist of two separate parts. The first step is to compute a *hash function* that transforms the search key into an array index. Ideally, different keys would map to different indices. 
+
+This ideal is generally beyond our reach, so we have to face the possibility that **two or more different keys may hash to the same array index**. Thus, the second part of a hashing search is a *collision-resolution* process that deals with this situation. 
+
+#### Separate Chaining
+
+If you make an insert into a bucket where a value already resides a list is created (often Linked list)	and the new object is added.
+
+Worst-case scenario is when all the elements of the table’s elements, end up in the same bucket as elements in the list (at which point, you could have used a list instead of a hash table).
+
+**Different strategies for sizing a hash table.**
+
+* We can have a large table, with lots of indices, for very fast search - but at the cost of extra memory.
+
+* Or we can have a small table, with slower searches - but save memory. 
+
+* Or you can resize the lists (the ones inside the hash table’s cells) on the fly, to ensure they have as short a length as possible. 
+
+
+
+#### Linear Probing
+
+The simplest open-addressing method is called *linear probing*: when there is a collision (when we hash to a table index that is already occupied with a key different from the search key), then we **just check the next entry in the table** (by incrementing the index). 
+
+
+
+As with separate chaining, the performance of open-addressing methods is dependent on the ratio **α = N/M**, but we interpret it differently. 
+
+* For separate chaining α is the **average number of items per list** and is generally larger than 1. 
+* For open addressing, α is the **percentage of table positions that are occupied**; it *must* be less than 1. 
+* We refer to α as the ***load factor*** of the hash table.
 
  
+
+#### Clustering
+
+When entries in a hash table clump together (especially with the nature of linear probing)
+
+Resize the table before load factor gets too high. 
+
+
+
+#### Symbol table applications
+
+**Dictionary clients** like phone book, dictionary, DNS
+
+**Indexing clients** like web search (keyword, websites), book index (term, page numbers)
+
+
 
 ## Swarms
 
+Particle Swarm Optimization (PSO)  algorithm is a population-based search algorithm based on the simulation of the social behavior of birds within a flock.
 
+In PSO particles are "flown" through search space. The changes to a particles within the swarm are influenced by the knowledge of its neighbors. 
+
+**Applications:** PSO has been used mostly to find minima and maxima of nonlinear functions
 
 ## Undirected Graphs
 
-Depth first, breadth first, connection
+A *graph* is a set of *vertices* and a collection of *edges* that each connect a pair of vertices. 
 
- 
+
+
+#### Depth first search
+
+**Searching in a maze**
+
+Depth first search explores as far as possible along each branch before backtracking.
+
+Depth-first search is a classic recursive method for systematically examining each of the vertices and edges in a graph. To visit a vertex
+
+* Mark it as having been visited.
+* Visit (recursively) all the vertices that are adjacent to it and that have not yet been marked.
+
+
+| Trace                                            | Paths                                            |
+| ------------------------------------------------ | ------------------------------------------------ |
+| ![depth first search](http://prntscr.com/jvpl3h) | ![depth first search](http://prntscr.com/jvpupl) |
+
+
+#### Breadth first search
+
+*Depth-first search* finds some path from a source vertex `s` to a target vertex `v`. 
+
+We are often interested in finding **the *shortest* such path** (one with a minimal number of edges). Breadth-first search is a classic method based on this goal. To find a shortest path from `s` to `v`, we start at `s` and check for `v` among all the vertices that we can reach by following one edge, then we check for `v` among all the vertices that we can reach from `s` by following two edges, and so forth. 
+
+| Trace                                              | Paths                                              |
+| -------------------------------------------------- | -------------------------------------------------- |
+| ![breadth first search](http://prntscr.com/jvpllt) | ![breadth first search](http://prntscr.com/jvptsh) |
+
+#### Connected Components
+
+
 
 ## Directed Graphs
 
-Digraphs
+Digraphs aka directed graphs
 
 Cycles, connection, reachability
+
+
 
 ## Minimum Spanning Tree
 
