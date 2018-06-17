@@ -401,6 +401,8 @@ Finding all shortest paths from a single source with positive weights Iterativel
 
 (**Like Prim's Algorithm**)
 
+![](https://image.prntscr.com/image/ZWCINs5HTsCqFDcgTkCX9w.png)
+
 #### A* algorithm
 
 Generalizes Dijkstra's and Best First Search
