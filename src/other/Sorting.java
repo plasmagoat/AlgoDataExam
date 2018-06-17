@@ -1,4 +1,4 @@
-package com.company;
+package other;
 
 public class Sorting {
 

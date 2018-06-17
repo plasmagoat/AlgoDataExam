@@ -275,7 +275,7 @@ Resize the table before load factor gets too high.
 
 **Indexing clients** like web search (keyword, websites), book index (term, page numbers)
 
-
+![](https://image.prntscr.com/image/aMWeObZbTp6C2tYgIodHFQ.png)
 
 ## Swarms
 
