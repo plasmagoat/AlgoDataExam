@@ -159,8 +159,6 @@ and log n because we divide the list *n* times
 
  Quicksort works by:
 
-   
-
 - First selecting a *pivot* number in the array,
 - Then sorting the other numbers by placing them before or after the pivot number respectively.
 - At this point, the pivot number is in the correct location, and the two groups of numbers (one on each side of the pivot number) still need to be sorted.
@@ -193,8 +191,6 @@ A binary tree is *heap-ordered* if the key in each node is larger than (or equ
 
 The largest key in a heap-ordered binary tree is found at the root. 
 
-
-
 **Heapsort**. We can use any priority queue to develop a sorting method. We insert all the keys to be sorted into a minimum-oriented priority queue, then repeatedly use remove the minimum to remove them all in order. When using a heap for the priority queue, we obtain heapsort.
 
 ### Symbol tables
@@ -221,7 +217,7 @@ Examples:
 
 ## Search Trees
 
-A *binary search tree* (BST) is a binary tree where each node has a `Comparable` key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree. 
+A ***binary search tree*** (BST) is a binary tree where each node has a `Comparable` key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree. 
 
 **Balanced Search Trees** TODO
 
@@ -293,8 +289,6 @@ In PSO particles are "flown" through search space. The changes to a particles wi
 
 A *graph* is a set of *vertices* and a collection of *edges* that each connect a pair of vertices. 
 
-
-
 #### Depth first search
 
 **Searching in a maze**
@@ -324,21 +318,82 @@ We are often interested in finding **the *shortest* such path** (one with a mi
 
 #### Connected Components
 
+A direct application of depth-first search is to find the connected components of a graph. DFS marks all the vertices connected to a given source.
 
+BFS computes a shortest path from s to v. 
+
+
+
+**More applications:**
+
+Cycle detection: is a given graph acyclic? use DFS to determine whether a graph has a cycle.
+
+#### Symbol Graphs
+
+Vertex names are strings. 
 
 ## Directed Graphs
 
-Digraphs aka directed graphs
+A *directed graph* (or *digraph*) is a set of *vertices* and a collection of *directed edges* that each connects an ordered pair of vertices. We say that a directed edge *points from* the first vertex in the pair and *points to* the second vertex in the pair. 
+
+
 
 Cycles, connection, reachability
 
+**Reachability in digraphs.** Depth-first search and breadth-first search are fundamentally digraph-processing algorithms.
 
+* *Single-source reachability:* Given a digraph and source `s`, is there a directed path from s to v? (**DFS**)
+* *Multiple-source reachability:* Given a digraph and a *set* of source vertices, is there a directed path from *any* vertex in the set to v? (**DFS**)
+* *Single-source directed paths:* given a digraph and source `s`, is there a directed path from s to v? If so, find such a path. (**DFS**)
+* *Single-source shortest directed paths*: given a digraph and source `s`, is there a directed path from s to v? (**BFS**)
+
+**Cycles and DAGs.** Directed cycles are of particular importance in applications that involve processing digraphs.
+
+* *Directed cycle detection*: does a given digraph have a directed cycle? (**DFS**)
+* 
 
 ## Minimum Spanning Tree
 
+An *edge-weighted graph* is a graph where we associate *weights* or *costs* with each edge. A *minimum spanning tree (**MST**)* of an edge-weighted graph is a spanning tree whose weight (the sum of the weights of its edges) is no larger than the weight of any other spanning tree. 
 
+* Adding an edge that connects two vertices in a tree creates a unique cycle.
+
+- Removing an edge from a tree breaks it into two separate subtrees.
+
+##### Prim's Algorithm
+
+Prim's algorithm works by attaching a new edge to a single growing tree at each step: Start with any vertex as a single-vertex tree; then add V-1 edges to it, always taking next (coloring black) the minimum-weight edge that connects a vertex on the tree to a vertex not yet on the tree 
+
+**Lazy Implementation**
+
+* Start with one vertex
+* Use priority queue for all edges from that vertex sorted by weight
+* Add the vertex with the lowest weighted edge to the tree
+* Add the edges from the new vertex to the sorted priority queue
+* Repeat the adding process
+* ![](https://image.prntscr.com/image/zfEYSdlES36kfWJjw-dxGg.png)
+
+The lazy version of Prim's algorithm uses space proportional to **E** and time proportional to **E log E** (in the worst case) to compute the MST 
+
+**Eager Implementation**
+
+- Edges that go to already covered vertices are removed from the priority queue
+
+In short: we maintain on the priority queue just one edge for each non-tree vertex: the shortest edge that connects it to the tree. 
+
+The eager version uses space proportional to **V** and time proportional to **E log V** 
+
+##### Kruskal's Algorithm 
+
+Kruskal's algorithm processes the edges in order of their weight values (smallest to largest), taking for the MST (coloring black) each edge that does not form a cycle with edges previously added, stopping after adding V-1 edges. The black edges form a forest of trees that evolves gradually into a single tree, the MST. 
+
+![](https://image.prntscr.com/image/0waVuuP-Q6uQXcldlaAAXQ.png)
 
 ## Shortest Path
+
+#### Dijkstra's Algorithm
+
+
 
 A* algorithm
 

@@ -1,17 +1,29 @@
 package recursion;
 
+import analysis.Squareroot;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Fibonacci fb1 = new Fibonacci(1,30);
-        Fibonacci fb2 = new Fibonacci(2,30);
-        Fibonacci fb3 = new Fibonacci(3,30);
+
+
+        //################1st lesson######################
+
+        Fibonacci fb3 = new Fibonacci(2,20);
+        Fibonacci fb = new Fibonacci(1,20);
+        Fibonacci fb2 = new Fibonacci(2,20);
+        //Fibonacci fb3 = new Fibonacci(3,30);
+        Fibonacci fb4 = new Fibonacci(1,40);
 
         System.out.println(mystery(2,25));
         System.out.println(mystery(3,11));
 
         System.out.println("GCD: " + gcd(1111111,1234567));
+
+        new Squareroot(2.0,3,1);
+
+
 
     }
 
@@ -34,4 +46,5 @@ public class Main {
         int r = p % q;
         return gcd(q, r);
     }
+
 }

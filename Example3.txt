@@ -1,0 +1,3 @@
+A text with more than one line.
+The text contains comma,
+full stop and exclamation mark !

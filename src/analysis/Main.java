@@ -9,5 +9,8 @@ public class Main {
 
         Egg e = new Egg(1000, 5);
 
+        new Squareroot(2.0,3,1);
+
+
     }
 }

@@ -1,4 +1,4 @@
-package com.company;
+package mergequicksort;
 
 public class NutsBolts {
 
@@ -13,6 +13,7 @@ public class NutsBolts {
         System.out.println("\nBolts : ");
         printarray(bolts);
         findpairs(nuts, bolts, 0, nuts.length-1);
+        System.out.println();
         System.out.println("Sorted");
         System.out.println("Nuts : ");
         printarray(nuts);

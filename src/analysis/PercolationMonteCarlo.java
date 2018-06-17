@@ -1,4 +1,4 @@
-package com.company;
+package analysis;
 
 import java.util.concurrent.TimeUnit;
 
