@@ -1,4 +1,4 @@
-package com.company;
+package assignment2;
 
 public class Student {
     private Question[] questions;

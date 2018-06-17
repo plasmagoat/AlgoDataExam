@@ -1,4 +1,4 @@
-package com.company;
+package assignment1;
 
 public class Main {
 
