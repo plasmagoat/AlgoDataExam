@@ -391,10 +391,16 @@ Kruskal's algorithm processes the edges in order of their weight values (smalles
 
 ## Shortest Path
 
+https://sinon.org/algorithms//#data-structures
+
+Nice visual on bottom of page
+
 #### Dijkstra's Algorithm
 
+Finding all shortest paths from a single source with positive weights Iteratively extract closest vertex \(u\) and relax all edges \((u, v)\). The set of vertices is handled using a priority queue.  
 
+(**Like Prim's Algorithm**)
 
-A* algorithm
+#### A* algorithm
 
- 
+Generalizes Dijkstra's and Best First Search
