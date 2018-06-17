@@ -155,7 +155,7 @@ and breaking the list up *n* times
 
 and log n because we divide the list *n* times
 
-**The basic algorithm. ** Quicksort is a divide-and-conquer method for sorting. It works by partitioning an array into two parts, then sorting the parts independently.
+**The basic algorithm**. Quicksort is a divide-and-conquer method for sorting. It works by partitioning an array into two parts, then sorting the parts independently.
 
  Quicksort works by:
 
