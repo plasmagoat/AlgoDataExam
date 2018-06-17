@@ -391,7 +391,7 @@ Kruskal's algorithm processes the edges in order of their weight values (smalles
 
 ## Shortest Path
 
-https://sinon.org/algorithms//#data-structures
+https://sinon.org/algorithms/
 
 Nice visual on bottom of page
 
