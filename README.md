@@ -229,7 +229,23 @@ Examples:
 
 A ***binary search tree*** (BST) is a binary tree where each node has a `Comparable` key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree. 
 
-**Balanced Search Trees** TODO
+**Balanced Search Trees** is a type of binary search tree where costs are guaranteed to be *logarithmic*. Our trees have near-perfect balance, where the height is guaranteed to be no larger than 2 log N.
+
+* **2-3 search trees.** The primary step to get the flexibility that we need to guarantee balance in search trees is to allow the nodes in our trees to hold more than one key.
+  * A *2-node*, with one key (and associated value) and two links 
+  * A *3-node*, with two keys and three links 
+
+A ***perfectly balanced* 2-3 search tree** (or 2-3 tree for short) is one whose null links are all the same distance from the root. 
+
+Red-Black BST leads to natural implementation of 2-3 search tree. 
+
+* Red lines represent 3-node connections.
+
+| 2-3 Search Tree | Red-Black BST \| 3-node |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![](https://image.prntscr.com/image/QhZPxyozQ0y2mqPE-dgbpA.png)                                                             |                     ![](https://image.prntscr.com/image/BDF136rvTauh-STh8tQf_A.png)                                         |
+
+
 
 ## Hash Tables
 
