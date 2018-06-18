@@ -5,6 +5,16 @@
 
 Bad Recursion BRB
 
+
+
+Finite. Deterministic and effective problem-solving method
+
+* The recursion has a **base case**.
+* Recursive calls must address subproblems that are smaller in some sense, so that recursive calls converge to the base case.
+* Recursive calls should not address subproblems that overlap
+
+
+
 Fibonacci numbers using recursion.
 
 ```java
@@ -350,7 +360,6 @@ Cycles, connection, reachability
 **Cycles and DAGs.** Directed cycles are of particular importance in applications that involve processing digraphs.
 
 * *Directed cycle detection*: does a given digraph have a directed cycle? (**DFS**)
-* 
 
 ## Minimum Spanning Tree
 
@@ -405,4 +414,4 @@ Finding all shortest paths from a single source with positive weights Iterativel
 
 #### A* algorithm
 
-Generalizes Dijkstra's and Best First Search
+Generalizes Dijkstra's with heuristic.
